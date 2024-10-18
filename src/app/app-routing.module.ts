@@ -6,8 +6,11 @@ import { EventListComponent } from './components/event-list/event-list.component
 const routes: Routes = [
   { path: 'event-form', component: EventFormComponent },
   { path: 'event-list', component: EventListComponent },
-  { path: '', redirectTo: '/event-list', pathMatch: 'full' }, // Redirección por defecto a /event-list
+  { path: '', redirectTo: 'app', pathMatch: 'full' },
 ];
 
 export const appRoutes = routes;
+
+
+
 

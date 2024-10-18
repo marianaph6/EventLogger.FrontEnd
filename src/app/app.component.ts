@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; // Asegúrate de importar RouterModule
+import { EventFormComponent } from './components/event-form/event-form.component'; 
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [RouterModule],
+  imports: [RouterModule]
 })
 export class AppComponent {
   title = 'Event Logger';

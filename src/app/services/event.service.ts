@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EventService {
-  private apiUrl = 'https://your-backend-url/api/events'; // Cambia esta URL por la de tu backend
+  private apiUrl = 'https://localhost:7041/Events/create-event';
 
   constructor(private http: HttpClient) {}
 
@@ -14,7 +14,7 @@ export class EventService {
     return this.http.post(this.apiUrl, event);
   }
 
-  getEvents(filters: { eventType?: string; startDate?: string; endDate?: string }): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl, { params: filters });
+   getEvents(filters: { eventType?: string; startDate?: string; endDate?: string }): Observable<any[]> {
+     return this.http.get<any[]>(this.apiUrl, { params: filters });
   }
 }
