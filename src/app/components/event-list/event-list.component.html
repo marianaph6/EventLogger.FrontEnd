@@ -1,0 +1,25 @@
+<div class="event-list">
+    <h2>Lista de Eventos</h2>
+  
+    <div>
+      <label for="eventType">Tipo de Evento:</label>
+      <select id="eventType" [(ngModel)]="eventType" (change)="applyFilters()">
+        <option value="">Todos</option>
+        <option value="Api">API</option>
+        <option value="Formulario">Formulario Manual</option>
+      </select>
+  
+      <label for="startDate">Fecha de Inicio:</label>
+      <input type="date" id="startDate" [(ngModel)]="startDate" (change)="applyFilters()">
+  
+      <label for="endDate">Fecha de Fin:</label>
+      <input type="date" id="endDate" [(ngModel)]="endDate" (change)="applyFilters()">
+    </div>
+  
+    <ul>
+      <li *ngFor="let event of events">
+        <strong>{{ event.eventType }}</strong>: {{ event.description }} - {{ event.timestamp | date:'short' }}
+      </li>
+    </ul>
+  </div>
+  
