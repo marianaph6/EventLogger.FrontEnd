@@ -14,7 +14,7 @@ export class EventService {
     return this.http.post(`${this.apiUrl}/create-event`, event);
   }
 
-   getEvents(filters: { eventType?: string; startDate?: string; endDate?: string }): Observable<any[]> {
+   getEvents(filters: { EventType?: string; StartDate?: string; EndDate?: string }): Observable<any[]> {
      return this.http.get<any[]>(`${this.apiUrl}/get-events`, { params: filters });
   }
 }

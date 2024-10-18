@@ -9,13 +9,14 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.css'],
-  imports: [FormsModule, CommonModule, RouterModule], 
+  imports: [FormsModule, CommonModule, RouterModule],
 })
 export class EventListComponent implements OnInit {
   events: any[] = [];
-  eventType: string = '';
-  startDate: string = '';
-  endDate: string = '';
+  EventType: string = '';
+  StartDate: string = '';
+  EndDate: string = '';
+  errorMessage: string = '';  // Variable para manejar errores
 
   constructor(private eventService: EventService) {}
 
@@ -25,14 +26,25 @@ export class EventListComponent implements OnInit {
 
   getEvents() {
     const filters = {
-      eventType: this.eventType,
-      startDate: this.startDate,
-      endDate: this.endDate
+      EventType: this.EventType,
+      StartDate: this.StartDate,
+      EndDate: this.EndDate
     };
 
+    this.errorMessage = '';  // Limpiar mensaje de error antes de hacer la solicitud
+
     this.eventService.getEvents(filters).subscribe(
-      data => this.events = data,
-      error => console.error('Error fetching events', error)
+      (data) => {
+        this.events = data;
+        if (this.events.length === 0) {
+          this.errorMessage = 'No se encontraron eventos que coincidan con los filtros aplicados.'; // Mensaje para lista vacía
+        }
+      },
+      (error) => {
+        this.events = [];  // Asegurar que no haya eventos visibles en caso de error
+        this.errorMessage = error.message || 'Ha ocurrido un error al obtener los eventos.';  // Capturar y mostrar el error
+        console.error('Error fetching events', error);
+      }
     );
   }
 

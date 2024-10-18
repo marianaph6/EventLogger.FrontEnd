@@ -1,62 +1,64 @@
 .event-list {
-  max-width: 800px; /* Establece un ancho máximo para la lista */
-  margin: 20px auto; /* Centra el contenido horizontalmente y añade margen vertical */
+  max-width: 600px;
+  margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ddd; /* Añade un borde suave */
-  border-radius: 8px; /* Bordes redondeados */
-  background-color: #f9f9f9; /* Fondo claro */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  text-align: center; /* Centra el encabezado */
-  color: #333; /* Color del texto */
-  margin-bottom: 20px; /* Espaciado inferior */
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .filter-container {
-  display: flex; /* Usa flexbox para alinear los filtros */
-  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
-  justify-content: space-between; /* Espaciado entre elementos */
-  margin-bottom: 20px; /* Espaciado inferior */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-label {
-  margin-right: 10px; /* Espaciado derecho para etiquetas */
-  font-weight: bold; /* Peso de fuente negrita */
+.filter-container label {
+  flex-basis: 100%;
+  font-weight: bold;
+  color: #555;
 }
 
-select,
-input[type="date"] {
-  padding: 8px; /* Espaciado interno */
-  border: 1px solid #ccc; /* Borde suave */
-  border-radius: 4px; /* Bordes redondeados */
-  font-size: 14px; /* Tamaño de fuente */
-}
-
-select:focus,
-input[type="date"]:focus {
-  border-color: #007bff; /* Color de borde al enfocar */
-  outline: none; /* Elimina el contorno predeterminado */
+.filter-container input,
+.filter-container select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 .event-list-items {
-  list-style-type: none; /* Elimina los puntos de la lista */
-  padding: 0; /* Elimina el espaciado interno */
+  list-style-type: none;
+  padding: 0;
 }
 
 .event-list-item {
-  padding: 10px; /* Espaciado interno para cada elemento de la lista */
-  border-bottom: 1px solid #eee; /* Línea divisoria entre elementos */
-}
-
-.event-list-item:last-child {
-  border-bottom: none; /* Elimina la línea divisoria del último elemento */
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .no-events-message {
-  text-align: center; /* Centra el mensaje */
-  color: #777; /* Color del texto para mensajes de advertencia */
-  font-style: italic; /* Estilo de fuente itálica */
-  margin-top: 20px; /* Espaciado superior */
+  text-align: center;
+  color: #555;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  text-align: center;
 }

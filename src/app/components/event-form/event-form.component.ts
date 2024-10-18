@@ -20,7 +20,7 @@ export class EventFormComponent {
 
   submitEvent() {
     this.errorMessage = '';
-    const event = { description: this.description, eventType: this.eventType, dateEvent: new Date().toISOString() };
+    const event = { description: this.description, eventType: this.eventType, dateEvent: this.dateEvent};
     this.eventService.createEvent(event).subscribe(
       response => {
         console.log('Event created successfully', response);

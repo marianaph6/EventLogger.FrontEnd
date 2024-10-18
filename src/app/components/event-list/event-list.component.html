@@ -3,26 +3,46 @@
 
   <div class="filter-container">
     <label for="eventType">Tipo de Evento:</label>
-    <select id="eventType" [(ngModel)]="eventType" (change)="applyFilters()">
+    <select id="eventType" [(ngModel)]="EventType" (change)="applyFilters()">
       <option value="">Todos</option>
       <option value="Api">API</option>
       <option value="Formulario">Formulario Manual</option>
     </select>
 
     <label for="startDate">Fecha de Inicio:</label>
-    <input type="date" id="startDate" [(ngModel)]="startDate" (change)="applyFilters()" aria-label="Fecha de Inicio">
+    <input
+      type="date"
+      id="startDate"
+      [(ngModel)]="StartDate"
+      (change)="applyFilters()"
+      aria-label="Fecha de Inicio"
+    />
 
     <label for="endDate">Fecha de Fin:</label>
-    <input type="date" id="endDate" [(ngModel)]="endDate" (change)="applyFilters()" aria-label="Fecha de Fin">
+    <input
+      type="date"
+      id="endDate"
+      [(ngModel)]="EndDate"
+      (change)="applyFilters()"
+      aria-label="Fecha de Fin"
+    />
   </div>
-
-  <ul class="event-list-items">
-    <li *ngFor="let event of events" class="event-list-item">
-      <strong>{{ event.eventType }}</strong>: {{ event.description }} - {{ event.timestamp | date: 'short' }}
-    </li>
-  </ul>
-
-  <div *ngIf="events.length === 0" class="no-events-message">
+  
+  <!-- Mensaje cuando no hay eventos después de aplicar filtros -->
+  <div *ngIf="events && events.length === 0" class="no-events-message">
     <p>No se encontraron eventos que coincidan con los filtros aplicados.</p>
   </div>
+
+  <!-- Mensaje cuando no hay eventos o hay un error -->
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Lista de eventos -->
+  <ul class="event-list-items" *ngIf="events.length > 0">
+    <li *ngFor="let event of events" class="event-list-item">
+      <strong>{{ event.eventType }}</strong
+      >: {{ event.description }} - {{ event.timestamp | date : "short" }}
+    </li>
+  </ul>
 </div>
