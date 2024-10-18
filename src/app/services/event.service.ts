@@ -6,15 +6,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EventService {
-  private apiUrl = 'https://localhost:7041/Events/create-event';
+  private apiUrl = 'https://localhost:7041/Events';
 
   constructor(private http: HttpClient) {}
 
   createEvent(event: { description: string; eventType: string }): Observable<any> {
-    return this.http.post(this.apiUrl, event);
+    return this.http.post(`${this.apiUrl}/create-event`, event);
   }
 
    getEvents(filters: { eventType?: string; startDate?: string; endDate?: string }): Observable<any[]> {
-     return this.http.get<any[]>(this.apiUrl, { params: filters });
+     return this.http.get<any[]>(`${this.apiUrl}/get-events`, { params: filters });
   }
 }

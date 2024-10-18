@@ -1,22 +1,69 @@
 .event-form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px #aaa;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  form div {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
+  max-width: 500px; /* Ancho máximo */
+  margin: 20px auto; /* Centrado en la página */
+  padding: 20px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde suave */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo claro */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h2 {
+  text-align: center; /* Centra el encabezado */
+  color: #333; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Espaciado inferior entre grupos de formulario */
+}
+
+label {
+  display: block; /* Asegura que la etiqueta ocupe todo el ancho */
+  margin-bottom: 5px; /* Espaciado inferior de la etiqueta */
+  font-weight: bold; /* Peso de fuente negrita */
+  color: #555; /* Color del texto de las etiquetas */
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%; /* Asegura que los campos ocupen todo el ancho */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde suave */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+  border-color: #007bff; /* Color de borde al enfocar */
+  outline: none; /* Elimina el contorno predeterminado */
+}
+
+.btn-submit {
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto */
+  padding: 10px 15px; /* Espaciado interno del botón */
+  border: none; /* Elimina el borde predeterminado */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-size: 16px; /* Tamaño de fuente */
+  width: 100%; /* Asegura que el botón ocupe todo el ancho */
+}
+
+.btn-submit:disabled {
+  background-color: #ccc; /* Color de fondo del botón deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor al pasar sobre el botón deshabilitado */
+}
+
+.error-message {
+  margin-top: 10px; /* Espaciado superior */
+  padding: 10px; /* Espaciado interno */
+  background-color: #f8d7da; /* Fondo de error */
+  color: #721c24; /* Color de texto de error */
+  border: 1px solid #f5c6cb; /* Borde de error */
+  border-radius: 4px; /* Bordes redondeados */
+  text-align: center; /* Centra el texto de error */
+}

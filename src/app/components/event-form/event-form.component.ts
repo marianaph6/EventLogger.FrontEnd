@@ -13,11 +13,13 @@ import { CommonModule } from '@angular/common';
 export class EventFormComponent {
   description: string = '';
   eventType: string = '';
-  dateEvent: string = '';
+  dateEvent: Date = new Date;
+  errorMessage: string = '';
 
   constructor(private eventService: EventService) {}
 
   submitEvent() {
+    this.errorMessage = '';
     const event = { description: this.description, eventType: this.eventType, dateEvent: new Date().toISOString() };
     this.eventService.createEvent(event).subscribe(
       response => {
@@ -25,7 +27,9 @@ export class EventFormComponent {
         this.description = '';
         this.eventType = '';
       },
-      error => console.error('Error creating event', error)
+      error => {
+        this.errorMessage = error.message || 'Ha ocurrido un error al registrar el evento.';
+      }
     );
   }
 }

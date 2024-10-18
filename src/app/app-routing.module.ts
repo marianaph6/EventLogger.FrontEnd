@@ -7,7 +7,13 @@ const routes: Routes = [
   { path: 'event-form', component: EventFormComponent },
   { path: 'event-list', component: EventListComponent },
   { path: '', redirectTo: 'app', pathMatch: 'full' },
+  { path: '**', redirectTo: 'app'}
 ];
+
+NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
+})
 
 export const appRoutes = routes;
 

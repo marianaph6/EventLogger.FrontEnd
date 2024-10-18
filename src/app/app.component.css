@@ -1,0 +1,116 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+  }
+  
+  /* Estilos de la aplicación */
+  .app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos de encabezado */
+  .header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #4a90e2 0%, #007bff 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+  }
+  
+  .header p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+  }
+  
+  /* Estilos de navegación */
+  .navbar {
+    background-color: #0056b3;
+    padding: 15px 0;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-list li {
+    margin: 0 20px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+  }
+  
+  .nav-link:hover {
+    background-color: #003f7f;
+    transform: scale(1.05);
+  }
+  
+  /* Estilo para la clase activa */
+  .active {
+    background-color: #003f7f;
+  }
+  
+  /* Estilos del contenido principal */
+  main {
+    padding: 20px;
+  }
+  
+  /* Estilos de pie de página */
+  .footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 600px) {
+    .nav-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-list li {
+      margin: 10px 0;
+    }
+  
+    .header h1 {
+      font-size: 2.2rem;
+    }
+  
+    .header p {
+      font-size: 1rem;
+    }
+  }
+  

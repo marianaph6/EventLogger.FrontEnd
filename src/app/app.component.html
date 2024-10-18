@@ -1,7 +1,22 @@
 <div class="app">
-  <nav>
-    <a routerLink="/event-form" routerLinkActive="active">Registrar Evento</a>
-    <a routerLink="/event-list" routerLinkActive="active">Lista de Eventos</a>
+  <header class="header">
+    <h1>Gestión de Eventos</h1>
+    <p>Organiza, registra y consulta tus eventos de manera sencilla y eficiente</p>
+  </header>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li>
+        <a routerLink="/event-form" routerLinkActive="active" class="nav-link">Registrar Evento</a>
+      </li>
+      <li>
+        <a routerLink="/event-list" routerLinkActive="active" class="nav-link">Lista de Eventos</a>
+      </li>
+    </ul>
   </nav>
-  <router-outlet></router-outlet>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2024 Gestión de Eventos. Todos los derechos reservados.</p>
+  </footer>
 </div>
